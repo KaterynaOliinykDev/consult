@@ -1,0 +1,64 @@
+mat-toolbar{
+  height:auto;
+  padding: 0 0 0 2rem;
+  display: inline-block;
+}
+ul{
+  list-style-type: none;
+  padding-left: 0;
+  height:100%;
+  margin:0;
+  display: block;
+}
+ul.topmenu li{
+  float:left;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-right: 1px solid #dee2e6;
+  line-height: 1.5;
+}
+ul.topmenu li a{
+  color: #6B6A75;
+  text-decoration: none;
+}
+ul.contact{
+  background: #F3525A;
+  position: relative;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: right;
+  display: block;
+  float: right;
+}
+ul.contact span{
+  font-family: "Open Sans",sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+}
+ul.contact span.email{
+  border-right: 1px solid #dee2e6;
+}
+ul.contact::before{
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 100%;
+  top: 0;
+  left: -20px;
+  background: #F3525A;
+  transform: skew(40deg);
+}
+mat-icon{
+  padding-right: 0.5em;
+  margin-bottom: -5px;
+}

@@ -1,0 +1,33 @@
+
+mat-toolbar{
+  background: none;
+  display: inline-block;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+h1{
+  color: #F3525A;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+a{
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--dark);
+  transition: 0.5s;
+  padding: 35px 15px;
+}
+nav{
+  padding: 35px 15px;
+}
+.logo{
+  float:left;
+}
+.logo a{
+  padding:0;
+}
+.mainMenu{
+  float:right;
+}
