@@ -7,11 +7,59 @@ import { ServiceComponent } from './pages/service/service.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
-  { path:'home', component: HomeComponent },
-  { path:'about', component: AboutComponent },
-  { path:'service', component: ServiceComponent },
-  { path:'contact', component: ContactComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path:'home', component: HomeComponent },
+  {
+    path:'about',
+    component: AboutComponent,
+    data: {
+      title: 'About Us',
+      breadcrumb: [
+        {
+          label: 'Home',
+          url: '/home'
+        },
+        {
+          label: 'About',
+          url: ''
+        }
+      ]
+    },
+  },
+  {
+    path:'service',
+    component: ServiceComponent,
+    data: {
+      title: 'Services',
+      breadcrumb: [
+        {
+          label: 'Home',
+          url: '/home'
+        },
+        {
+          label: 'Services',
+          url: ''
+        }
+      ]
+    },
+  },
+  {
+    path:'contact',
+    component: ContactComponent,
+    data: {
+      title: 'Contact Us',
+      breadcrumb: [
+        {
+          label: 'Home',
+          url: '/home'
+        },
+        {
+          label: 'Contact',
+          url: ''
+        }
+      ]
+    },
+  },
   { path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
 

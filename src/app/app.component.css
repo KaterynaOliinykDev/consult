@@ -18,3 +18,17 @@ footer{
   float:left;
   background-color: #152440;
 }
+.header-page{
+  background-color: #152440;
+  text-align: center;
+  padding: 25px;
+  font-size: 25px;
+  color:#F3525A;
+}
+.header-page h1{
+  margin-bottom: 0px;
+  color: #fff;
+}
+.breadcrumb ul {
+  padding-top: 0;
+}

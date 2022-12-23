@@ -1,0 +1,46 @@
+.full-width {
+    width: 100%;
+  }
+.part-width{
+    width: 50%;
+}
+input{
+   height: 40px;
+}
+textarea{
+    min-height: 200px;
+}
+mat-card{
+  border:0;
+  box-shadow:none;
+}
+button{
+  background-color: #F3525A;
+  border-color: #F3525A;
+  width: 100%;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  color: #FFFFFF;
+  padding: 0 16px;
+  cursor: pointer;
+}
+.mat-mdc-text-field-wrapper {
+  padding: 10px;
+}
+.mdc-card__actions {
+    padding: 0px 10px 10px 16px;
+}
+.mat-mdc-card-title{
+  font-size: 3rem;
+  font-weight: 700;
+}
+input, textarea{
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
