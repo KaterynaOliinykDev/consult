@@ -8,15 +8,21 @@ import { filter, map } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    ) {}
-
   title = 'consult';
+  showHeaderPage = 'block';
 
-  shouldShowBreadcrumb:boolean = false;
+    constructor(public router: Router, private activatedRoute: ActivatedRoute) {
+        this.router.events
+          .subscribe((event) => {
+            if (event instanceof NavigationEnd) {
+              if(event.url === "/home") {
+                this.showHeaderPage = 'none';
+              } else {
+                this.showHeaderPage = 'block';
+              }
+            }
+          })
+    }
 
     ngOnInit() {
       this.router.events
@@ -36,12 +42,9 @@ export class AppComponent implements OnInit {
         })
       )
       .subscribe((title) => {
-        this.title = title;
+        this.router.url != '/home'? this.title = title : this.title = '';
       });
+
     }
 
-    hasRoute(route: string) {
-      console.log(this.router.url);
-      return this.router.url.includes(route);
-    }
 }

@@ -1,27 +1,35 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent{
+export class ContactComponent implements OnInit{
 
-  contactForm = this.fb.group({
-    fullName: ['', Validators.required],
-    email: ['', Validators.required],
-    subject: ['', Validators.required],
-    message: ['', Validators.required],
-  })
+  contactForm: FormGroup;
+  Contacts:any = [];
+  post_id: any;
 
- constructor(private fb: FormBuilder){}
+  constructor(
+    public formBuilder: FormBuilder,
+    private contactService: ContactService,
+  ){
+    this.contactForm = this.formBuilder.group({
+      full_name: ['', Validators.required],
+      email: ['', Validators.required],
+      subject: ['', Validators.required],
+      message: ['', Validators.required],
+    })
+  }
 
- get fullname() {
-  return this.contactForm.get('fullName');
- }
+  ngOnInit(): void {}
 
- saveContact(form: any) {
-  console.log(this.contactForm.value);
- }
+  saveContact() {
+    this.contactService.createContact(this.contactForm.value).subscribe((response: any) => {
+      console.log('Contact create.');
+    });
+}
 }

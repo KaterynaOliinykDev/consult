@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { MaterialModule } from '../material.module';
 
 import { GoogleMapsModule } from '@angular/google-maps';
 
@@ -8,18 +12,8 @@ import { NgDynamicBreadcrumbModule } from 'ng-dynamic-breadcrumb';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatGridListModule} from '@angular/material/grid-list';
-import { MatCardModule} from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatFormFieldModule } from '@angular/material/form-field';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
@@ -46,25 +40,19 @@ import { ContactComponent } from './pages/contact/contact.component';
     ContactComponent,
     ContactForm,
     BlockWelcomeComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSlideToggleModule,
-    MatGridListModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatListModule,
-    MatIconModule,
-    MatMenuModule,
     FontAwesomeModule,
-    MatFormFieldModule,
     GoogleMapsModule,
-    NgDynamicBreadcrumbModule
+    NgDynamicBreadcrumbModule,
+    HttpClientModule,
+    MaterialModule
   ],
   providers: [Title],
   bootstrap: [AppComponent]

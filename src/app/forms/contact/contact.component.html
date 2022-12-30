@@ -3,9 +3,9 @@
       <mat-card-header>
         <mat-card-title>Contact For Any Queries</mat-card-title>
       </mat-card-header>
-      <form [formGroup]="contactForm" (ngSubmit)="saveContact(contactForm)" class="contact-form">
+      <form [formGroup]="contactForm" (ngSubmit)="saveContact()" class="contact-form">
         <mat-form-field  class="part-width">
-          <input matInput formControlName="fullName" placeholder="Full name" class="full-width">
+          <input matInput formControlName="full_name" placeholder="Full name" class="full-width">
         </mat-form-field>
         <mat-form-field  class="part-width">
           <input type="email" formControlName="email" placeholder="Email address" class="full-width" matInput>
@@ -22,6 +22,3 @@
       </form>
   </mat-card-content>
 </mat-card>
-
-
-

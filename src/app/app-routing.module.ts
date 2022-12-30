@@ -8,7 +8,19 @@ import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path:'home', component: HomeComponent },
+  {
+    path:'home',
+    component: HomeComponent,
+    data: {
+      title: 'Home',
+      breadcrumb: [
+        {
+          label: 'Home',
+          url: ''
+        },
+      ]
+    }
+   },
   {
     path:'about',
     component: AboutComponent,
@@ -60,6 +72,7 @@ const routes: Routes = [
       ]
     },
   },
+  { path: 'add-contact', component: ContactComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
 
