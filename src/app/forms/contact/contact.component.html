@@ -4,21 +4,51 @@
         <mat-card-title>Contact For Any Queries</mat-card-title>
       </mat-card-header>
       <form [formGroup]="contactForm" (ngSubmit)="saveContact()" class="contact-form">
-        <mat-form-field  class="part-width">
-          <input matInput formControlName="full_name" placeholder="Full name" class="full-width">
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+          <td>
+            <mat-form-field  class="full-width" appearance="outline">
+              <mat-label>Full name</mat-label>
+              <input matInput formControlName="full_name" class="full-width">
+              <mat-error *ngIf="this.contactForm.controls.full_name.hasError('required')">
+                Full name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field  class="full-width" appearance="outline">
+              <mat-label>Email address</mat-label>
+              <input type="email" formControlName="email" class="full-width" matInput>
+              <mat-error *ngIf="this.contactForm.controls.email.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+       </table>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Subject</mat-label>
+          <input matInput formControlName="subject" class="full-width">
+          <mat-error *ngIf="this.contactForm.controls.subject.hasError('required')">
+            Subject is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
-        <mat-form-field  class="part-width">
-          <input type="email" formControlName="email" placeholder="Email address" class="full-width" matInput>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Message</mat-label>
+          <textarea matInput formControlName="message" class="full-width"></textarea>
+          <mat-error *ngIf="this.contactForm.controls.message.hasError('required')">
+            Message is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
-        <mat-form-field class="full-width">
-          <input matInput formControlName="subject" placeholder="Subject" class="full-width">
-        </mat-form-field>
-        <mat-form-field class="full-width">
-          <textarea matInput formControlName="message" placeholder="Message" class="full-width"></textarea>
-        </mat-form-field>
+        <div class="form-message" *ngIf="isSubmitted">
+          <h3>Thank you! Your message has been received.</h3>
+        </div>
         <mat-card-actions>
           <button mat-button color="primary" type="submit">Submit</button>
         </mat-card-actions>
       </form>
   </mat-card-content>
 </mat-card>
+
+
+

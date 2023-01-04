@@ -5,10 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from '../material.module';
+import { ErrorStateMatcher } from '@angular/material/core';
 
 import { GoogleMapsModule } from '@angular/google-maps';
 
-import { NgDynamicBreadcrumbModule } from 'ng-dynamic-breadcrumb';
+//import { NgDynamicBreadcrumbModule } from 'ng-dynamic-breadcrumb';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -26,6 +27,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ServiceComponent } from './pages/service/service.component';
 import { ContactComponent } from './pages/contact/contact.component';
+
+import { CustomErrorStateMatcher } from 'src/app/custom-state-matcher';
 
 
 
@@ -50,11 +53,14 @@ import { ContactComponent } from './pages/contact/contact.component';
     AppRoutingModule,
     FontAwesomeModule,
     GoogleMapsModule,
-    NgDynamicBreadcrumbModule,
+    //NgDynamicBreadcrumbModule,
     HttpClientModule,
     MaterialModule
   ],
-  providers: [Title],
+  providers: [
+    Title,
+    { provide: ErrorStateMatcher, useClass:CustomErrorStateMatcher }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

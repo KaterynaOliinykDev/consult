@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ContactService } from '../../services/contact.service';
 
@@ -8,14 +9,15 @@ import { ContactService } from '../../services/contact.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit{
-
   contactForm: FormGroup;
   Contacts:any = [];
   post_id: any;
+  isSubmitted = false;
 
   constructor(
     public formBuilder: FormBuilder,
     private contactService: ContactService,
+    public router: Router,
   ){
     this.contactForm = this.formBuilder.group({
       full_name: ['', Validators.required],
@@ -27,9 +29,11 @@ export class ContactComponent implements OnInit{
 
   ngOnInit(): void {}
 
+
   saveContact() {
-    this.contactService.createContact(this.contactForm.value).subscribe((response: any) => {
-      console.log('Contact create.');
+    this.contactService.createContact(this.contactForm.value).subscribe((res) => {
+      this.isSubmitted = true;
+      this.contactForm.reset();
     });
-}
+  }
 }

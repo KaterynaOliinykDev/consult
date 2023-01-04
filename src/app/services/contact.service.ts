@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Contact } from './contact.model';
 import { Observable, throwError } from 'rxjs';
-import {
-  HttpClient,
-  HttpHeaders,
-} from '@angular/common/http';
+import { retry, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +12,12 @@ export class ContactService {
 
   REST_API = 'http://localhost:8080/api';
 
-  httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  createContact(contact: Contact): Observable<any> {
+
+  createContact(contact:Contact): Observable<Contact> {
     const url = `${this.REST_API}/add-contact`;
-    return this.httpClient.post(url,contact);
+    return this.http.post(url,contact);
   }
 }
