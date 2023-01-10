@@ -1,0 +1,70 @@
+<mat-tab-group backgroundColor="primary" [(selectedIndex)]= "selectedIndex" dynamicHeight>
+  <mat-tab label="Login">
+    <div class="login">
+      <div *ngIf="message" class="success-message">
+        Congratulations, your account has been successfully created.
+      </div>
+      <h2>Welcome<span *ngIf="message && userName"> {{ userName }}</span>,</h2>
+      <h5>Sign in to Continue</h5>
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+        <mat-form-field  class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" class="full-width">
+          <div *ngIf="submitted && loginFormControl.email.errors" class="invalid-feedback">
+            <mat-error *ngIf="loginFormControl.email.errors?.required">Email is required</mat-error>
+            <mat-error *ngIf="loginFormControl.email.errors?.email">Email must be a valid email address</mat-error>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" class="full-width">
+          <div *ngIf="submitted && loginFormControl.password.errors" class="invalid-feedback">
+            <mat-error *ngIf="loginFormControl.password.errors?.required">Password is required</mat-error>
+          </div>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Login</button>
+      </form>
+      </div>
+  </mat-tab>
+  <mat-tab label="Register">
+    <div class="login">
+      <h3>Create an account</h3>
+      <form [formGroup]="registerForm" (ngSubmit)="register()" class="register-form" novalidate autocomplete="false">
+        <mat-form-field  class="full-width" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" formControlName="username" class="full-width">
+          <div *ngIf="submitted && registerFormControl.username.errors" class="invalid-feedback">
+            <mat-error *ngIf="registerFormControl.username.errors.required">Username is required</mat-error>
+          </div>
+        </mat-form-field>
+        <mat-form-field  class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput  type="email" formControlName="email" class="full-width">
+          <div *ngIf="submitted && registerFormControl.email.errors" class="invalid-feedback">
+            <mat-error *ngIf="registerFormControl.email.errors?.required">Email is required</mat-error>
+            <mat-error *ngIf="registerFormControl.email.errors?.email">Email must be a valid email address</mat-error>
+          </div>
+        </mat-form-field>
+        <mat-form-field  class="full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" class="full-width">
+          <div *ngIf="submitted && registerFormControl.password.errors" class="invalid-feedback">
+            <mat-error *ngIf="registerFormControl.password.errors?.required">Password is required</mat-error>
+            <mat-error *ngIf="registerFormControl.password.errors?.pattern">
+              Password must contain more than 8 characters, 1 numeric, 1 upper case letter, and 1 special character($@$!%*?&)
+            </mat-error>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Confirm password</mat-label>
+          <input matInput type="password" formControlName="confirmPassword" class="full-width">
+          <div *ngIf="submitted && registerFormControl.confirmPassword.errors" class="invalid-feedback">
+            <mat-error *ngIf="registerFormControl.confirmPassword.errors.required">Confirm Password is required</mat-error>
+            <mat-error *ngIf="registerFormControl.confirmPassword.errors.ConfirmPasswordValidator">Passwords must match</mat-error>
+          </div>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Register</button>
+      </form>
+    </div>
+  </mat-tab>
+</mat-tab-group>

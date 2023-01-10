@@ -25,8 +25,9 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'dist/consult')))
 
 const contactRoute = require('./src/app/routes/contact.routes');
+const userRoute = require('./src/app/routes/user.routes');
 
-app.use('/api',contactRoute)
+app.use('/api',contactRoute, userRoute);
 
 var port = process.env.PORT || 8080;
 app.listen(port, () => {

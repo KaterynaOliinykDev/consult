@@ -19,6 +19,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.contact = require("./contact.model.js")(sequelize, Sequelize);
+db.contact = require("./contact/contact.model.js")(sequelize, Sequelize);
+db.user = require("./user/user.model.js")(sequelize, Sequelize);
 
 module.exports = db;

@@ -1,17 +1,15 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ContactService } from '../../services/contact.service';
+import { ContactService } from '../../services/contacts/contact.service';
 
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnInit{
+export class ContactComponent{
   contactForm: FormGroup;
-  Contacts:any = [];
-  post_id: any;
   isSubmitted = false;
 
   constructor(
@@ -26,9 +24,6 @@ export class ContactComponent implements OnInit{
       message: ['', Validators.required],
     })
   }
-
-  ngOnInit(): void {}
-
 
   saveContact() {
     this.contactService.createContact(this.contactForm.value).subscribe((res) => {

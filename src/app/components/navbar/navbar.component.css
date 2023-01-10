@@ -9,6 +9,8 @@ h1{
   color: #F3525A;
   text-transform: uppercase;
   font-weight: 700;
+  font-size: 2.5rem;
+  padding-top:20px;
 }
 a{
   text-decoration: none;

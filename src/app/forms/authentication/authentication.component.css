@@ -1,0 +1,31 @@
+.full-width {
+  width: 100%;
+}
+h2,h3,h5{
+  font-family: "Open Sans",sans-serif;
+  line-height: 1.5;
+}
+h2{
+  margin:0;
+  font-size: 25px;
+}
+.description h3{
+  margin-top: 0;
+  font-size: 25px;
+}
+h5{
+  margin-top:0;
+  font-weight: 400;
+  font-size: 15px;
+}
+.login, .register{
+  padding:20px;
+  width:300px;
+}
+form button{
+  width:100%;
+}
+.success-message{
+  color: green;
+  margin-bottom:20px;
+}
