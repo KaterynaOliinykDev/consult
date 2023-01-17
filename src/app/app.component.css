@@ -4,6 +4,7 @@ topbar {
   display: block;
   padding: 0;
   margin: 0;
+  height: 48px;
 }
 navbar{
   width: 100%;
@@ -21,18 +22,29 @@ footer{
 .header-page{
   background-color: #152440;
   text-align: center;
-  padding: 25px;
+  padding: 3rem;
   font-size: 25px;
   color:#F3525A;
 }
 .header-page h1{
   margin-bottom: 0px;
   color: #fff;
+  margin-top: 0;
 }
-.breadcrumb ul {
-  padding-top: 0;
+::ng-deep .xng-breadcrumb-root .xng-breadcrumb-item,
+::ng-deep .xng-breadcrumb-root .xng-breadcrumb-trail,
+::ng-deep .xng-breadcrumb-separator{
+  color:#F3525A;
+  font-size:16px;
 }
-.breadcrumb {
-  align-items: center;
+::ng-deep .xng-breadcrumb-list{
   justify-content: center;
+}
+xng-breadcrumb .mat-icon {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+}
+::ng-deep xng-breadcrumb .xng-breadcrumb-root{
+  margin-top:10px;
 }

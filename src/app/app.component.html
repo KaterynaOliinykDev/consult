@@ -2,7 +2,10 @@
 <navbar></navbar>
 <div class = "header-page" [ngStyle]="{'display': showHeaderPage }">
     <h1>{{ title }}</h1>
-    <!--<app-ng-dynamic-breadcrumb [bgColor]="'#152440'" [fontSize]="'18px'" [fontColor]="'#F3525A'" [lastLinkColor]="'#F3525A'" [symbol]="' ◻ '" class="breadcrumb"></app-ng-dynamic-breadcrumb>-->
+    <xng-breadcrumb [separator]="iconTemplate"></xng-breadcrumb>
+    <ng-template #iconTemplate>
+      <mat-icon>crop_din</mat-icon>
+    </ng-template>
 </div>
 <router-outlet></router-outlet>
 <footer></footer>

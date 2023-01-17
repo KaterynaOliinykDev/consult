@@ -33,8 +33,7 @@ exports.create = (req, res) => {
 };
 
  exports.findRegisteredUser = (req, res) => {
-  const email = req.query.email;
-  const password = req.query.password;
+  const { email, password } = req.query;
 
   var condition = { email: { [Op.like]: `%${email}%`} };
 

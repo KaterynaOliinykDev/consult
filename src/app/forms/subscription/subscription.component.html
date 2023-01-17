@@ -1,0 +1,14 @@
+<div class="title">Stay Update!!!</div>
+<div *ngIf="message" class="success-message">
+  Thank you for doing business with us.
+</div>
+<form *ngIf="!message" [formGroup]="subscriptionForm" (ngSubmit)="sendEmail()" class="subsctiption-form">
+  <mat-form-field  class="full-width">
+    <input matInput type="email" formControlName="email" placeholder="Your Email" class="full-width">
+    <div *ngIf="submitted && subscriptionFormControl.email.errors" class="invalid-feedback">
+      <mat-error *ngIf="subscriptionFormControl.email.errors?.required">Email is required</mat-error>
+      <mat-error *ngIf="subscriptionFormControl.email.errors?.email">Email must be a valid email address</mat-error>
+    </div>
+  </mat-form-field>
+  <button mat-raised-button color="primary">Sign Up</button>
+</form>

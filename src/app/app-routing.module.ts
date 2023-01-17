@@ -7,18 +7,19 @@ import { ServiceComponent } from './pages/service/service.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: '',
+    data: {
+    title: 'Home',
+    breadcrumb:'Home'
+  },
+  redirectTo: '/home',
+  pathMatch: 'full'},
   {
     path:'home',
     component: HomeComponent,
     data: {
       title: 'Home',
-      breadcrumb: [
-        {
-          label: 'Home',
-          url: ''
-        },
-      ]
+      breadcrumb:'Home'
     }
    },
   {
@@ -26,53 +27,25 @@ const routes: Routes = [
     component: AboutComponent,
     data: {
       title: 'About Us',
-      breadcrumb: [
-        {
-          label: 'Home',
-          url: '/home'
-        },
-        {
-          label: 'About',
-          url: ''
-        }
-      ]
-    },
+      breadcrumb: 'About'
+    }
   },
   {
     path:'service',
     component: ServiceComponent,
     data: {
       title: 'Services',
-      breadcrumb: [
-        {
-          label: 'Home',
-          url: '/home'
-        },
-        {
-          label: 'Services',
-          url: ''
-        }
-      ]
-    },
+      breadcrumb: 'Services'
+    }
   },
   {
     path:'contact',
     component: ContactComponent,
     data: {
       title: 'Contact Us',
-      breadcrumb: [
-        {
-          label: 'Home',
-          url: '/home'
-        },
-        {
-          label: 'Contact',
-          url: ''
-        }
-      ]
-    },
+      breadcrumb: 'Contact'
+    }
   },
-  { path: 'add-contact', component: ContactComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
 
@@ -80,4 +53,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

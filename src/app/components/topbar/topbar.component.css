@@ -62,3 +62,12 @@ mat-icon{
   padding-right: 0.5em;
   margin-bottom: -5px;
 }
+.mat-mdc-raised-button.mat-mdc-button-base{
+  height:30px;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #152440;
+  box-shadow: none;
+  background-color: initial;
+}

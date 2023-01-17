@@ -9,13 +9,14 @@ import { filter, map } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   title = 'consult';
-  showHeaderPage = 'block';
+  showHeaderPage = 'none';
 
     constructor(public router: Router, private activatedRoute: ActivatedRoute) {
         this.router.events
           .subscribe((event) => {
             if (event instanceof NavigationEnd) {
-              if(event.url === "/home") {
+              let url = event.url;
+              if(url == "/home" || url == '/') {
                 this.showHeaderPage = 'none';
               } else {
                 this.showHeaderPage = 'block';

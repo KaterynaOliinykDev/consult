@@ -1,0 +1,78 @@
+::ng-deep block-our-team{
+  width: 100%;
+  display: block;
+  float: left;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+.content{
+  position: absolute;
+  top:50%;
+  left: -100%;
+  background-color: #F3525A;
+  color:#fff;
+  width: 100%;
+  padding: 1.5rem 0 0 0;
+}
+.content::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  top: 50%;
+  right: -60px;
+  margin-top: -30px;
+  border: 30px solid #F3525A;
+  border-color: transparent transparent transparent #F3525A;
+}
+.content h2{
+  font-size: 1.75rem;
+  text-align: center;
+  margin:0;
+}
+.content p{
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-align: center;
+  left: -100%;
+  transition: 0.5s;
+}
+h1{
+  font-size:3rem;
+  color: #152440;
+  text-align:center;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+mat-grid-tile:hover .content{
+  left: 0;
+  transition: 0.5s;
+}
+img{
+  transform: scale(1.15);
+  margin-left: -30px;
+  transition: .5s;
+  max-width: 100%;
+  vertical-align: middle;
+  padding-top: 30px;
+}
+mat-grid-tile:hover img{
+  margin-left: 0;
+}
+.description{
+  overflow: hidden;
+  position: relative;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.mat-grid-list {
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+hr{
+  color: #F3525A;
+  width: 10%;
+  opacity: 0.25;
+}
