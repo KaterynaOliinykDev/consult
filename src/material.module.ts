@@ -11,6 +11,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
     exports: [
@@ -25,7 +29,11 @@ import { MatButtonModule } from '@angular/material/button';
       MatInputModule,
       MatDialogModule,
       MatTabsModule,
-      MatButtonModule
+      MatButtonModule,
+      MatSidenavModule,
+      MatTableModule,
+      MatPaginatorModule,
+      MatCheckboxModule
     ]
   })
   export class MaterialModule {}

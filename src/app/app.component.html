@@ -1,11 +1,16 @@
-<topbar></topbar>
-<navbar></navbar>
-<div class = "header-page" [ngStyle]="{'display': showHeaderPage }">
-    <h1>{{ title }}</h1>
-    <xng-breadcrumb [separator]="iconTemplate"></xng-breadcrumb>
-    <ng-template #iconTemplate>
-      <mat-icon>crop_din</mat-icon>
-    </ng-template>
+<div *ngIf="!dashboard">
+  <topbar></topbar>
+  <navbar></navbar>
+  <div class = "header-page" [ngStyle]="{'display': showHeaderPage }">
+      <h1>{{ title }}</h1>
+      <xng-breadcrumb [separator]="iconTemplate"></xng-breadcrumb>
+      <ng-template #iconTemplate>
+        <mat-icon>crop_din</mat-icon>
+      </ng-template>
+  </div>
+  <router-outlet></router-outlet>
+  <footer></footer>
 </div>
-<router-outlet></router-outlet>
-<footer></footer>
+<div *ngIf="dashboard">
+  <router-outlet></router-outlet>
+</div>

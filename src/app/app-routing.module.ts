@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AdminDashboardComponent } from './dashboard/admin/admin-dashboard.component';
+
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ServiceComponent } from './pages/service/service.component';
 import { ContactComponent } from './pages/contact/contact.component';
+
+import { AuthGuard }  from './helpers/auth.guard';
+import { Role } from './models/role';
 
 const routes: Routes = [
   { path: '',
@@ -46,7 +51,15 @@ const routes: Routes = [
       breadcrumb: 'Contact'
     }
   },
-  { path: '**', redirectTo: '/home', pathMatch: 'full'},
+  {
+    path:'dashboard/admin',
+    component: AdminDashboardComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: Role.Admin
+    }
+  }
+  /*{ path: '**', redirectTo: '/home', pathMatch: 'full'},*/
 ];
 
 @NgModule({

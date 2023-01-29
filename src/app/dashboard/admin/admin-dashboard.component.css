@@ -1,0 +1,72 @@
+::ng-deep mat-tab-group {
+  flex-direction: row !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+::ng-deep .mat-mdc-tab-labels {
+  flex-direction: column !important;
+}
+::ng-deep .mat-mdc-tab-header{
+  width:15%;
+  background-color: #152440;
+}
+::ng-deep .mat-mdc-tab-body-wrapper{
+  width:85%;
+  background-color: #e9eaef;
+}
+::ng-deep .mat-mdc-tab-header .mdc-tab {
+  justify-content: left;
+}
+::ng-deep .mat-mdc-tab-header .mdc-tab .mdc-tab__text-label{
+  color:#fff!important;
+}
+mat-toolbar .account_circle.mdc-icon-button{
+  position: absolute;
+  right: 10%;
+}
+mat-toolbar .account_circle.mdc-icon-button .mat-icon{
+ font-size:30px;
+ height:30px;
+ width: 30px;
+ display: block;
+ float: left;
+}
+.username{
+  font-size: 18px;
+  line-height: 30px;
+  padding-left:10px;
+}
+::ng-deep app-admin-dashboard .logo{
+  width:15%;
+}
+::ng-deep app-admin-dashboard .logo a{
+  text-decoration: none;
+}
+::ng-deep app-admin-dashboard h1{
+  color: #fff;
+  font-size: 20px !important;
+  padding-left: 5px;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}
+::ng-deep app-admin-dashboard h1 .ng-fa-icon{
+  padding-right: 5px;
+}
+::ng-deep app-admin-dashboard .mat-mdc-button-touch-target{
+  transition: color 500ms;
+}
+
+::ng-deep mat-tab-group.show .mat-mdc-tab-header{
+  opacity:1;
+  transition: opacity 0.5s linear;
+}
+
+::ng-deep mat-tab-group.hide .mat-mdc-tab-header{
+  width: 0;
+  transition: opacity 0.5s linear;
+}
+::ng-deep mat-tab-group.hide .mat-mdc-tab-body-wrapper{
+  width:100%;
+}

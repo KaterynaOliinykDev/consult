@@ -14,6 +14,8 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
+import { AdminDashboardRoutingModule } from './dashboard/admin/admin-dashboard-routing.module';
+
 import { AppComponent } from './app.component';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -32,6 +34,11 @@ import { ServiceComponent } from './pages/service/service.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
 import { CustomErrorStateMatcher } from 'src/app/custom-state-matcher';
+import { AdminDashboardComponent } from './dashboard/admin/admin-dashboard.component';
+import { MainDashboardComponent } from './dashboard/admin/pages/main/main.component';
+import { UsersComponent } from './dashboard/admin/pages/users/users.component';
+import { ContactsComponent } from './dashboard/admin/pages/contacts/contacts.component';
+import { SubscriptionsComponent } from './dashboard/admin/pages/subscriptions/subscriptions.component';
 
 
 
@@ -49,7 +56,12 @@ import { CustomErrorStateMatcher } from 'src/app/custom-state-matcher';
     SubscriptionComponent,
     BlockWelcomeComponent,
     BlockOurTeamComponent,
-    FooterComponent
+    FooterComponent,
+    AdminDashboardComponent,
+    UsersComponent,
+    ContactsComponent,
+    SubscriptionsComponent,
+    MainDashboardComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -57,6 +69,7 @@ import { CustomErrorStateMatcher } from 'src/app/custom-state-matcher';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    AdminDashboardRoutingModule,
     FontAwesomeModule,
     GoogleMapsModule,
     HttpClientModule,

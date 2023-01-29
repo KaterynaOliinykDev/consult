@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ConfirmPasswordValidator } from "./confirm-password.validator";
-import { UserService } from '../../services/users/user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-authentication-form',
@@ -61,8 +61,14 @@ export class AuthenticationComponent implements OnInit {
     };
 
     this.userService.getRegisteredUser(email, password).subscribe(data => {
-      if(data.id){
-        console.log(data.id);
+      if(data.role && data.role == 'Admin'){
+        localStorage.setItem('role', data.role);
+        this.router.navigate(['/dashboard/admin']);
+      } else
+      if(data.role && data.role == 'User'){
+        this.router.navigate(['/']);
+      } else {
+        this.router.navigate(['/']);
       }
     });
   }
@@ -72,7 +78,8 @@ export class AuthenticationComponent implements OnInit {
     const data = {
       username: this.registerFormControl.username.value,
       email: this.registerFormControl.email.value,
-      password: this.registerFormControl.password.value
+      password: this.registerFormControl.password.value,
+      role:'User'
     }
 
     if (this.registerForm.invalid) {

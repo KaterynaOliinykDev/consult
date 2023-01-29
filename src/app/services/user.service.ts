@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from './user.model';
+import { User } from '../models/user/user.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,6 +20,14 @@ export class UserService {
   }
 
   getRegisteredUser(email: User, password: User): Observable<any> {
-    return this.http.get<User[]>(`${this.REST_API}?email=${email}&password=${password}`);
+    return this.http.get<User[]>(`${this.REST_API}/user/?email=${email}&password=${password}`);
+  }
+
+  getAll(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.REST_API}/users`);
+  }
+
+  deleteUser(id: User): Observable<any> {
+    return this.http.delete(`${this.REST_API}/delete/?id=${id}`);
   }
 }

@@ -7,15 +7,20 @@ import { filter, map } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   title = 'consult';
   showHeaderPage = 'none';
+  dashboard = false;
 
     constructor(public router: Router, private activatedRoute: ActivatedRoute) {
         this.router.events
           .subscribe((event) => {
             if (event instanceof NavigationEnd) {
               let url = event.url;
+              if(url == "/dashboard/admin") {
+                this.dashboard = true;
+              }
               if(url == "/home" || url == '/') {
                 this.showHeaderPage = 'none';
               } else {
