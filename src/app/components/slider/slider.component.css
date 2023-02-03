@@ -1,0 +1,103 @@
+::ng-deep .carousel-control-next,
+::ng-deep .carousel-control-prev {
+ background-color: initial!important;
+ border:0;
+}
+::ng-deep .carousel-control-next .visually-hidden,
+::ng-deep .carousel-control-prev .visually-hidden {
+  display: none;
+}
+::ng-deep .carousel-indicators{
+  display: none;
+}
+::ng-deep .carousel-control-prev-icon,
+::ng-deep .carousel-control-next-icon{
+  width: 3rem;
+  height: 3rem;
+}
+::ng-deep .carousel-item{
+  position: relative;
+}
+::ng-deep .carousel-item .visually-hidden{
+  display: none;
+}
+::ng-deep .carousel-item img{
+  width:100%;
+}
+::ng-deep .carousel-caption{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(21, 36, 64, .7);
+  z-index: 1;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+h1{
+  font-weight: 700;
+  font-size: 5rem;
+}
+.me-3{
+  margin-right: 1rem !important;
+}
+::ng-deep .btn-primary:hover {
+  color: #000;
+  background-color: #f56c73;
+  border-color: #f4636b;
+}
+::ng-deep  .btn-secondary:hover {
+  color: #000;
+  background-color: #f7f7f7;
+  border-color: #f7f7f7;
+}
+::ng-deep .btn {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  transition: .5s;
+}
+::ng-deep .btn-primary{
+  color: #fff;
+  background-color: #F3525A;
+  border-color: #F3525A;
+}
+::ng-deep .btn-secondary {
+  color: #000;
+  background-color: #F6F6F6;
+  border-color: #F6F6F6;
+}
+::ng-deep .px-md-5 {
+  padding-right: 3rem !important;
+  padding-left: 3rem !important;
+}
+::ng-deep .btn-check:checked + .btn-primary,
+::ng-deep .btn-check:active + .btn-primary,
+::ng-deep .btn-primary:active,
+::ng-deep.btn-primary.active,
+::ng-deep .show > .btn-primary.dropdown-toggle,
+::ng-deep btn-primary.focus,
+::ng-deep .btn-primary:focus {
+  color: #000;
+  background-color: #f5757b;
+  border-color: #f4636b;
+  box-shadow: 0 0 0 .25rem rgba(207,70,77,0.5);
+}
+::ng-deep .btn-check:checked + .btn-primary:focus,
+::ng-deep .btn-check:active + .btn-primary:focus,
+::ng-deep .btn-primary:active:focus,
+::ng-deep .btn-primary.active:focus,
+::ng-deep .show > .btn-primary.dropdown-toggle:focus{
+  box-shadow: 0 0 0 .25rem rgba(207,70,77,0.5);
+}
+::ng-deep .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+::ng-deep .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+
