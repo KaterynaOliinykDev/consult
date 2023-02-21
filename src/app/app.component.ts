@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'consult';
   showHeaderPage = 'none';
   dashboard = false;
+  account = false;
 
     constructor(public router: Router, private activatedRoute: ActivatedRoute) {
         this.router.events
@@ -20,7 +21,10 @@ export class AppComponent implements OnInit {
               let url = event.url;
               if(url == "/dashboard/admin") {
                 this.dashboard = true;
-              }
+              } else
+              if(url == "/account/user") {
+                this.account = true;
+              } else
               if(url == "/home" || url == '/') {
                 this.showHeaderPage = 'none';
               } else {

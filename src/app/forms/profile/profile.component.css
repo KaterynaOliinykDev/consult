@@ -1,0 +1,19 @@
+::ng-deep .profile-form .mat-mdc-form-field-infix,
+::ng-deep .profile-form .mat-mdc-form-field {
+  width:100%;
+}
+::ng-deep app-profile .mat-grid-tile-content {
+  align-items: normal;
+  padding:20px;
+}
+::ng-deep app-profile .mat-grid-list {
+  margin-top: 20px;
+}
+::ng-deep app-profile .mat-icon{
+  font-size: 150px;
+  width: 150px;
+  height: 150px;
+  color: #f3525a;
+  border: 1px solid #f3525a;
+  border-radius: 150px;
+}

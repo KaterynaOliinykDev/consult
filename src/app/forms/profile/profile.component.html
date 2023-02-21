@@ -1,0 +1,29 @@
+<mat-grid-list cols="2">
+  <mat-grid-tile class="avatar">
+    <mat-icon *ngIf="!avatar">account_circle</mat-icon>
+    <img *ngIf="avatar" [src]="avatar"/>
+  </mat-grid-tile>
+  <mat-grid-tile class="form">
+    <form [formGroup]="profileForm" (ngSubmit)="saveProfile()" class="profile-form">
+      <mat-form-field  class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" formControlName="username">
+        test
+      </mat-form-field>
+      <mat-form-field  class="full-width" appearance="fill">
+        <mat-label>Full name</mat-label>
+        <input matInput type="text" formControlName="fullName">
+      </mat-form-field>
+      <mat-form-field  class="full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field  class="full-width" appearance="fill">
+        <mat-label>Phone</mat-label>
+        <input matInput type="tel" placeholder="555-555-1234" formControlName="phone" class="full-width">
+      </mat-form-field>
+    <button mat-raised-button color="primary">Save Profile</button>
+  </form>
+  </mat-grid-tile>
+</mat-grid-list>
+

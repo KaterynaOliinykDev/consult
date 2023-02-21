@@ -1,4 +1,4 @@
-<div *ngIf="!dashboard">
+<div *ngIf="!(dashboard || account)">
   <topbar></topbar>
   <navbar></navbar>
   <div class = "header-page" [ngStyle]="{'display': showHeaderPage }">
@@ -11,6 +11,6 @@
   <router-outlet></router-outlet>
   <footer></footer>
 </div>
-<div *ngIf="dashboard">
+<div *ngIf="dashboard || account">
   <router-outlet></router-outlet>
 </div>

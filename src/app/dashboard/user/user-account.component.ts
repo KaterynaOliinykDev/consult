@@ -1,16 +1,17 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { faSmile } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
-  selector: 'app-admin-dashboard',
-  templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css']
+  selector: 'app-user-account',
+  templateUrl: './user-account.component.html',
+  styleUrls: ['./user-account.component.css']
 })
-
-export class AdminDashboardComponent{
+export class UserAccountComponent {
   title = 'consult';
   faSmile = faSmile;
   selectedState: boolean = true;
+  avatar=false;
+  username = 'test';
 
   logout(){
     if(localStorage.getItem('role')){
@@ -19,4 +20,3 @@ export class AdminDashboardComponent{
     }
   }
 }
-

@@ -39,7 +39,7 @@ exports.create = (req, res) => {
 
   var condition = { email: { [Op.like]: `%${email}%`} };
 
-  User.findOne({ attributes: ["id","password","role"], where: condition, raw: true })
+  User.findOne({ attributes: ["id","password","username","email","role"], where: condition, raw: true })
     .then(data => {
       if(bcrypt.compareSync(password, data.password)){
         res.send(data);

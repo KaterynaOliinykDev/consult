@@ -42,7 +42,11 @@ import { MainDashboardComponent } from './dashboard/admin/pages/main/main.compon
 import { UsersComponent } from './dashboard/admin/pages/users/users.component';
 import { ContactsComponent } from './dashboard/admin/pages/contacts/contacts.component';
 import { SubscriptionsComponent } from './dashboard/admin/pages/subscriptions/subscriptions.component';
-
+import { UserAccountComponent } from './dashboard/user/user-account.component';
+import { PersonalComponent } from './dashboard/user/pages/personal/personal.component';
+import { UserSubscriptionsComponent } from './dashboard/user/pages/user-subscriptions/user-subscriptions.component';
+import { PaymentsComponent } from './dashboard/user/pages/payments/payments.component';
+import { ProfileComponent } from './forms/profile/profile.component';
 
 
 @NgModule({
@@ -65,7 +69,12 @@ import { SubscriptionsComponent } from './dashboard/admin/pages/subscriptions/su
     ContactsComponent,
     SubscriptionsComponent,
     MainDashboardComponent,
-    SliderComponent
+    SliderComponent,
+    UserAccountComponent,
+    PersonalComponent,
+    UserSubscriptionsComponent,
+    PaymentsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

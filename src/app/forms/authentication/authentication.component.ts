@@ -66,7 +66,9 @@ export class AuthenticationComponent implements OnInit {
         this.router.navigate(['/dashboard/admin']);
       } else
       if(data.role && data.role == 'User'){
-        this.router.navigate(['/']);
+        localStorage.setItem('role', data.role);
+        localStorage.setItem('id', data.id);
+        this.router.navigate(['/account/user']);
       } else {
         this.router.navigate(['/']);
       }

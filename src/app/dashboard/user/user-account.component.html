@@ -1,0 +1,26 @@
+<div [@.disabled]="true">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <div class="logo">
+        <a routerLink="/home"><h1><fa-icon [icon]="faSmile"></fa-icon>Consult</h1></a>
+      </div>
+      <span class="spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="userMenu">
+        <mat-icon *ngIf="!avatar">account_circle</mat-icon>
+        <img *ngIf="avatar" [src]="avatar"/>
+      </button>
+      <span class="message"> Hello, {{ username }} !</span>
+      <mat-menu #userMenu="matMenu">
+        <button (click)="logout()" mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-tab-group [ngClass]="selectedState ? 'show' : 'hide'">
+    <mat-tab label="Personal"><app-personal></app-personal></mat-tab>
+    <mat-tab label="Subscription"><app-user-subscriptions></app-user-subscriptions></mat-tab>
+    <mat-tab label="Payments"><app-payments></app-payments></mat-tab>
+  </mat-tab-group>
+</div>
